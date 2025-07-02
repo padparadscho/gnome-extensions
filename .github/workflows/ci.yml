@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Ensure GLib Schema Tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y libglib2.0-bin
+
+      - name: Validate Shell Scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n scripts/compile.sh
+          bash -n scripts/install.sh
+
+      - name: Compile Extension Schemas
+        shell: bash
+        run: |
+          set -euo pipefail
+          found=0
+
+          for ext in extensions/*; do
+            [ -d "$ext" ] || continue
+            [ -d "$ext/schemas" ] || continue
+
+            found=1
+            name="$(basename "$ext")"
+            ./scripts/compile.sh "$name"
+          done
+
+          if [ "$found" -eq 0 ]; then
+            echo "No extensions with schemas found"
+          fi
