@@ -54,6 +54,10 @@ This repository contains custom GNOME Shell extensions designed to enhance _my_ 
 gnome-extensions enable code-tools
 ```
 
+## Contributing
+
+If you're interested in helping improve the `gnome-extensions` project, please see the [CONTRIBUTING](/CONTRIBUTING.md) file for guidelines on how to get started.
+
 ## License
 
 This project is licensed under the [MIT License](/LICENSE).
