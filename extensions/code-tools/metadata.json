@@ -1,0 +1,14 @@
+{
+  "name": "Code Tools",
+  "description": "GNOME Shell extension for Visual Studio Code workflow tools centered on workspaces.",
+  "version": 1,
+  "version-name": "0.1.0",
+  "uuid": "code-tools",
+  "shell-version": ["49"],
+  "url": "https://github.com/padparadscho/gnome-extensions",
+  "settings-schema": "org.gnome.shell.extensions.code-tools",
+  "gettext-domain": "code-tools",
+  "donations": {
+    "github": "padparadscho"
+  }
+}

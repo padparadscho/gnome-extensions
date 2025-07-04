@@ -1,0 +1,26 @@
+/* Panel indicator spacing */
+.code-tools-box {
+  padding: 0 4px;
+}
+
+/* Panel indicator text keeps shell color */
+.code-tools-label {
+  color: inherit;
+}
+
+/* Menu row base shape */
+.code-tools-row {
+  border-radius: 8px;
+}
+
+/* Menu row icons stay symbolic and white */
+.code-tools-icon {
+  icon-size: 16px;
+  margin-right: 8px;
+}
+
+/* Menu label stays readable and truncates long names */
+.code-tools-text {
+  color: inherit;
+  max-width: 420px;
+}
