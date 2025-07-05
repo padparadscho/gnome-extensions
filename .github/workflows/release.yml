@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y jq libglib2.0-bin zip
+
+      - name: Build Extensions
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          artifacts_dir="$PWD/artifacts"
+          mkdir -p "$artifacts_dir"
+
+          for ext in extensions/*; do
+            [ -d "$ext" ] || continue
+
+            name="$(basename "$ext")"
+            metadata="$ext/metadata.json"
+
+            if [ ! -f "$metadata" ]; then
+              echo "::error::$name missing metadata.json"
+              exit 1
+            fi
+
+            uuid="$(jq -r '.uuid' "$metadata")"
+            version="$(jq -r '.version' "$metadata")"
+            version_name="$(jq -r '.["version-name"] // empty' "$metadata")"
+
+            if [ -z "$version_name" ]; then
+              version_name="v$version"
+            fi
+
+            if [ -d "$ext/schemas" ]; then
+              ./scripts/compile.sh "$name"
+            fi
+
+            zipfile="$artifacts_dir/${uuid}-${version_name}.zip"
+
+            (cd "$ext" && zip -r "$zipfile" . \
+              -x "*.git*" \
+              -x "*.po" \
+              -x "*.pot" \
+              -x "*~")
+
+            echo "Built: $zipfile"
+          done
+
+      - name: Create Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          tag="${GITHUB_REF#refs/tags/}"
+
+          gh release create "$tag" \
+            --repo "${{ github.repository }}" \
+            --title "$tag" \
+            --generate-notes \
+            artifacts/*.zip

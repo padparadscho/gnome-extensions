@@ -3,6 +3,7 @@
 <div align="center">
 
 [![CI](https://github.com/padparadscho/gnome-extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/padparadscho/gnome-extensions/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/padparadscho/gnome-extensions)](https://github.com/padparadscho/gnome-extensions/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/padparadscho/gnome-extensions/blob/main/LICENSE)
 
 </div>
