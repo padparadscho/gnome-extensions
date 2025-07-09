@@ -1,0 +1,14 @@
+{
+  "name": "GitHub Tools",
+  "description": "GNOME Shell extension for GitHub workflow tools centered on repositories.",
+  "version": 1,
+  "version-name": "0.1.0",
+  "uuid": "github-tools",
+  "shell-version": ["49"],
+  "url": "https://github.com/padparadscho/gnome-extensions",
+  "settings-schema": "org.gnome.shell.extensions.github-tools",
+  "gettext-domain": "github-tools",
+  "donations": {
+    "github": "padparadscho"
+  }
+}

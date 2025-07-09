@@ -16,9 +16,10 @@ This repository contains custom GNOME Shell extensions designed to enhance _my_ 
 
 ## Extensions
 
-| Extension                              | Description                                              |
-| -------------------------------------- | -------------------------------------------------------- |
-| [Code Tools](./extensions/code-tools/) | Visual Studio Code workflow tools centered on workspaces |
+| Extension                                  | Description                                              |
+| ------------------------------------------ | -------------------------------------------------------- |
+| [Code Tools](./extensions/code-tools/)     | Visual Studio Code workflow tools centered on workspaces |
+| [GitHub Tools](./extensions/github-tools/) | GitHub workflow tools centered on repositories           |
 
 ## Project Structure
 
