@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/org/gnome/shell/extensions/code-tools/"
+        id="org.gnome.shell.extensions.code-tools">
+        <key type="s" name="set-workspaces-folder">
+            <default>""</default>
+            <summary>Set Workspaces Folder</summary>
+            <description>Folder to open when "View All" is clicked in the panel menu</description>
+        </key>
+        <key type="i" name="set-workspaces-limit">
+            <default>10</default>
+            <summary>Set Workspaces Limit</summary>
+            <description>Number of recent workspaces displayed in the panel</description>
+        </key>
+        <key type="as" name="set-remove-workspaces">
+            <default>[]</default>
+            <summary>Set Remove Workspaces</summary>
+            <description>List of workspace paths hidden from panel menu and preferences list</description>
+        </key>
+    </schema>
+</schemalist>

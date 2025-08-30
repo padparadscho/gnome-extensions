@@ -1,0 +1,17 @@
+# Compiled GSettings schemas
+**/schemas/gschemas.compiled
+
+# Packaged extension zip files
+*.zip
+*.shell-extension.zip
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editor/IDE files
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
