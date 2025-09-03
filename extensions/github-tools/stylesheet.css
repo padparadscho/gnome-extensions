@@ -1,0 +1,27 @@
+/* Panel indicator spacing */
+.github-tools-box {
+  padding: 0 8px;
+}
+
+/* Panel indicator text keeps shell color */
+.github-tools-label {
+  color: inherit;
+}
+
+/* Menu row base shape */
+.github-tools-row {
+  border-radius: 8px;
+}
+
+/* Menu row icons stay symbolic and white */
+.github-tools-icon {
+  icon-size: 16px;
+  color: white;
+  margin-right: 8px;
+}
+
+/* Menu label stays readable and truncates long names */
+.github-tools-text {
+  color: inherit;
+  max-width: 420px;
+}

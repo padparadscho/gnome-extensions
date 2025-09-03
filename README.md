@@ -1,5 +1,13 @@
 # GNOME Extensions
 
+<div align="center">
+
+[![CI](https://github.com/padparadscho/gnome-extensions/actions/workflows/ci.yml/badge.svg)](https://github.com/padparadscho/gnome-extensions/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/padparadscho/gnome-extensions)](https://github.com/padparadscho/gnome-extensions/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/padparadscho/gnome-extensions/blob/main/LICENSE)
+
+</div>
+
 A collection of personal GNOME Shell extensions built with GJS for **GNOME 49+**.
 
 ## Overview
@@ -8,9 +16,10 @@ This repository contains custom GNOME Shell extensions designed to enhance produ
 
 ## Extensions
 
-| Extension                              | Description                                              |
-| -------------------------------------- | -------------------------------------------------------- |
-| [Code Tools](./extensions/code-tools/) | Visual Studio Code workflow tools centered on workspaces |
+| Extension                                  | Description                                              |
+| ------------------------------------------ | -------------------------------------------------------- |
+| [Code Tools](./extensions/code-tools/)     | Visual Studio Code workflow tools centered on workspaces |
+| [GitHub Tools](./extensions/github-tools/) | GitHub workflow tools centered on repositories           |
 
 ## Project Structure
 

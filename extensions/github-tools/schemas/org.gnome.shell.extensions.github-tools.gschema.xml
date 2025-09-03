@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/org/gnome/shell/extensions/github-tools/"
+        id="org.gnome.shell.extensions.github-tools">
+        <key type="s" name="set-personal-access-token">
+            <default>""</default>
+            <summary>Set Personal Access Token</summary>
+            <description>Personal access token for GitHub API authentication</description>
+        </key>
+        <key type="i" name="set-repositories-limit">
+            <default>10</default>
+            <summary>Set Maximum Repositories to Display</summary>
+            <description>Number of recent repositories displayed in the panel</description>
+        </key>
+    </schema>
+</schemalist>
